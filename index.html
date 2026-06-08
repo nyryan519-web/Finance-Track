@@ -323,9 +323,8 @@ canvas { display:block; width:100%; }
 
       <div class="set-group">
         <label>Data</label>
-        <button class="set-btn" id="export-btn2">⬇ Export backup (JSON)</button>
-        <button class="set-btn" id="import-btn">⬆ Import backup (JSON)</button>
-        <button class="set-btn" id="seed-btn">✨ Load sample data</button>
+        <button class="set-btn" id="export-btn2">⬇ Save backup file</button>
+        <button class="set-btn" id="import-btn">⬆ Restore from backup</button>
         <button class="set-btn danger" id="clear-btn">🗑 Clear everything</button>
         <input type="file" id="import-file" accept="application/json" style="display:none">
       </div>
@@ -803,7 +802,7 @@ function bind(){
   $("export-btn").onclick = exportData; $("export-btn2").onclick = exportData;
   $("import-btn").onclick = ()=> $("import-file").click();
   $("import-file").onchange = (e)=>{ if(e.target.files[0]) importData(e.target.files[0]); };
-  $("seed-btn").onclick = seedSample; $("clear-btn").onclick = clearAll;
+  $("clear-btn").onclick = clearAll;
   $("bell-btn").onclick = ()=> showScreen("analytics");
 
   // close sheets on backdrop tap
